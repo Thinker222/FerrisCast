@@ -1,9 +1,9 @@
 [package]
-name = "FerrisCastGUI"
+name = "ferris_cast_gui"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-FerrisCastCore = {path = "../FerrisCastCore"}
+ferris_cast_core = {path = "../ferris_cast_core"}

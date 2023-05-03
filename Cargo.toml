@@ -1,2 +1,2 @@
 [workspace]
-members = ["FerrisCastCore", "FerrisCastGUI"]
+members = ["ferris_cast_core", "ferris_cast_gui"]
