@@ -1,4 +1,4 @@
-use ferris_cast_core::{parse_rss, Episode, Podcast};
+use ferris_cast_core::{parse_rss, Podcast};
 use std::path::PathBuf;
 
 #[test]
@@ -29,6 +29,7 @@ fn check_all_episodes() {
         assert!(ep.description != ferris_cast_core::BAD_STRING);
         assert!(ep.pub_date.is_ok());
         assert!(ep.enclosure != ferris_cast_core::BAD_STRING);
+        assert!(ep.link != ferris_cast_core::BAD_STRING)
     })
 }
 
