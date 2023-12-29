@@ -7,7 +7,11 @@ use std::io::BufReader;
 use std::path::PathBuf;
 use std::vec::Vec;
 
+mod config;
+mod database;
+
 pub static BAD_STRING: &str = "Unknown";
+
 
 pub struct Podcast {
     pub title: String,
@@ -44,7 +48,6 @@ pub struct Episode {
     pub description: String,
     pub enclosure: String,
     pub pub_date: Result<NaiveDate, ParseError>,
-    pub link: String
 }
 
 impl From<&Item> for Episode {
@@ -65,10 +68,6 @@ impl From<&Item> for Episode {
                 item.pub_date().unwrap_or(""),
                 "%a, %d %b %Y %H:%M:%S %z",
             )),
-            link: match item.enclosure() {
-                None => BAD_STRING.to_string(),
-                Some(v) => v.url.clone()
-            }
         }
     }
 }
